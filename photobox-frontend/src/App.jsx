@@ -1,10 +1,14 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 
-import Landing from "./pages/Landing.jsx";
+import Home from "./pages/Home.jsx";
+import Packages from "./pages/Packages.jsx";
+import Contact from "./pages/Contact.jsx";
 import Booking from "./pages/Booking.jsx";
-import Photobox from "./pages/Photobox.jsx";
 import Gallery from "./pages/Gallery.jsx";
+import Photobox from "./pages/Photobox.jsx";
+import Camera from "./pages/Camera.jsx";
+import Kiosk from "./pages/Kiosk.jsx";
 
 import AdminLogin from "./pages/AdminLogin.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
@@ -13,24 +17,42 @@ import ProtectedRoute from "./components/ProtectedRoute.jsx";
 export default function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/booking" element={<Booking />} />
-        <Route path="/photobox" element={<Photobox />} />
-        <Route path="/gallery" element={<Gallery />} />
+        {/* KIOSK MODE - no navbar */}
+        <Route path="/kiosk" element={<Kiosk />} />
 
-        <Route path="/admin/login" element={<AdminLogin />} />
+        {/* NORMAL MODE - with navbar */}
         <Route
-          path="/admin"
+          path="/*"
           element={
-            <ProtectedRoute>
-              <AdminDashboard />
-            </ProtectedRoute>
+            <>
+              <Navbar />
+              <Routes>
+                {/* USER */}
+                <Route path="/" element={<Home />} />
+                <Route path="/packages" element={<Packages />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/booking" element={<Booking />} />
+                <Route path="/photobox" element={<Photobox />} />
+                <Route path="/camera" element={<Camera />} />
+
+                {/* ADMIN */}
+                <Route path="/admin/login" element={<AdminLogin />} />
+                <Route
+                  path="/admin"
+                  element={
+                    <ProtectedRoute>
+                      <AdminDashboard />
+                    </ProtectedRoute>
+                  }
+                />
+
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </>
           }
         />
-
-        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

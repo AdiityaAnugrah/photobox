@@ -1,42 +1,43 @@
 import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
-    return (
-        <div className="nav">
-        <div className="nav-inner">
-            {/* Logo */}
-            <Link className="brand" to="/">
-            <span className="logo-bracket">[</span> Logo Photobox <span className="logo-bracket">]</span>
-            </Link>
+  return (
+    <div className="nav">
+      <div className="nav-inner">
+        <Link className="brand" to="/">
+          <span className="logo-bracket">[</span> Logo Photobox <span className="logo-bracket">]</span>
+        </Link>
 
-            {/* Menu */}
-            <div className="nav-links">
-            <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")}>
-                Home
-            </NavLink>
+        <div className="nav-links">
+          <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")}>
+            Home
+          </NavLink>
 
-            <NavLink to="/gallery" className={({ isActive }) => (isActive ? "active" : "")}>
-                Gallery
-            </NavLink>
+          <NavLink to="/gallery" className={({ isActive }) => (isActive ? "active" : "")}>
+            Gallery
+          </NavLink>
 
-            {/* Ini anchor ke section di Landing (nanti Landing perlu ada id="packages" dll) */}
-            <a className="nav-anchor" href="/#packages">
-                Packages
-            </a>
+          <NavLink to="/packages" className={({ isActive }) => (isActive ? "active" : "")}>
+            Packages
+          </NavLink>
 
-            <NavLink to="/booking" className={({ isActive }) => (isActive ? "active" : "")}>
-                Booking
-            </NavLink>
+          <NavLink to="/booking" className={({ isActive }) => (isActive ? "active" : "")}>
+            Booking
+          </NavLink>
 
-            <a className="nav-anchor" href="/#contact">
-                Contact
-            </a>
+          <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "")}>
+            Contact
+          </NavLink>
 
-            <Link className="btn nav-cta" to="/booking">
-                Book Now
-            </Link>
-            </div>
+          {/* CTA utama */}
+          <NavLink
+            to="/camera"
+            className={({ isActive }) => (isActive ? "btn nav-cta active-cta" : "btn nav-cta")}
+          >
+            Camera
+          </NavLink>
         </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 }
