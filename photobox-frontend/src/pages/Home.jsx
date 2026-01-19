@@ -13,18 +13,18 @@ export default function Home() {
         <section className="lp-hero">
           <div className="lp-hero-left">
             <div className="pill lp-pill">Sistem Photobox • Booking fleksibel • Gallery privat</div>
-
+            
             <h1 className="lp-title">
               Where creative
               <br />
               process happens
             </h1>
-
+            
             <p className="muted lp-sub">
               Booking online untuk pilih jam kosong, lalu foto tetap dilakukan di photobox coffeeshop.
               Setelah pembayaran, kamu dapat <b>ticket code</b> untuk membuka Camera & Gallery.
             </p>
-
+            
             <div className="lp-cta">
               <Link className="btn" to="/booking">
                 Book a Slot
@@ -33,7 +33,7 @@ export default function Home() {
                 Lihat Packages
               </Link>
             </div>
-
+            
             {/* Small feature cards */}
             <div className="lp-mini-cards">
               <div className="lp-mini">
@@ -50,7 +50,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-
+          
           {/* Hero collage right */}
           <div className="lp-hero-right">
             <div className="lp-collage">
@@ -61,7 +61,7 @@ export default function Home() {
               </div>
               <div className="lp-floating">Preview</div>
             </div>
-
+            
             <div className="lp-note card">
               <div className="muted" style={{ marginBottom: 8 }}>
                 Quick access
@@ -80,7 +80,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        
         {/* WHY SECTION */}
         <section className="lp-split">
           <div className="lp-split-left">
@@ -92,7 +92,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-
+          
           <div className="lp-split-right">
             <div className="lp-kicker">GET TO KNOW US</div>
             <h2 className="lp-h2">Why we make it happen</h2>
@@ -110,7 +110,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        
         {/* WHY CHOOSE US */}
         <section className="lp-choose">
           <h2 className="lp-h2 center">Why choose us</h2>
@@ -132,7 +132,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        
         {/* STATS + SHOWCASE */}
         <section className="lp-stats">
           <div className="lp-stats-card">
@@ -140,13 +140,13 @@ export default function Home() {
               <div className="ph-img ph-wide" />
               <div className="ph-img ph-wide2" />
             </div>
-
+            
             <div>
               <h2 className="lp-h2">Experiments and personal projects.</h2>
               <p className="muted">
                 Bisa dipakai untuk event kecil sampai besar. Sistem tetap aman karena akses kamera dibatasi code.
               </p>
-
+              
               <div className="lp-kpis">
                 <div className="lp-kpi">
                   <div className="lp-kpi-num">58+</div>
@@ -164,21 +164,21 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        
         {/* WORKS GRID */}
         <section className="lp-works">
           <div className="lp-works-head">
             <h2 className="lp-h2">Our Awesome Works</h2>
             <div className="muted">Contoh hasil foto yang tersimpan di gallery private.</div>
           </div>
-
+          
           <div className="lp-works-grid">
             {Array.from({ length: 9 }).map((_, i) => (
               <div key={i} className="lp-work ph-img" />
             ))}
           </div>
         </section>
-
+        
         {/* CTA BANNER */}
         <section className="lp-banner">
           <div className="lp-banner-inner">
@@ -196,14 +196,14 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-
+            
             <div className="lp-banner-art">
               <div className="lp-star" />
               <div className="lp-blob" />
             </div>
           </div>
         </section>
-
+        
         <div className="muted" style={{ fontSize: 12, marginTop: 18, paddingBottom: 12 }}>
           © Photobox — prototype UI landing page
         </div>

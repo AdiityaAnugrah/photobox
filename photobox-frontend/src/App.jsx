@@ -9,7 +9,7 @@ import Gallery from "./pages/Gallery.jsx";
 import Photobox from "./pages/Photobox.jsx";
 import Camera from "./pages/Camera.jsx";
 import Kiosk from "./pages/Kiosk.jsx";
-
+import Ticket from "./pages/Ticket.jsx";
 import AdminLogin from "./pages/AdminLogin.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
@@ -20,7 +20,7 @@ export default function App() {
       <Routes>
         {/* KIOSK MODE - no navbar */}
         <Route path="/kiosk" element={<Kiosk />} />
-
+        
         {/* NORMAL MODE - with navbar */}
         <Route
           path="/*"
@@ -36,7 +36,8 @@ export default function App() {
                 <Route path="/booking" element={<Booking />} />
                 <Route path="/photobox" element={<Photobox />} />
                 <Route path="/camera" element={<Camera />} />
-
+                <Route path="/ticket" element={<Ticket />} />
+                
                 {/* ADMIN */}
                 <Route path="/admin/login" element={<AdminLogin />} />
                 <Route
@@ -47,7 +48,7 @@ export default function App() {
                     </ProtectedRoute>
                   }
                 />
-
+                
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </>
